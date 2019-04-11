@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+</head>
+<body ng-controller="taskController">
+    <div id="menu">
+        <button>Ny</button>
+        <div id="new-task">
+            <label for="newTaskName">Titel:</label>
+            <input type="text" name="newTaskName" ng-model="newTaskName" id="">
+            <label for="newTaskDescription">Beskrivning:</label>
+            <input type="text" name="newTaskDescription"  ng-model="newTaskDescription">
+            <label for="newTaskDeadline">Deadline:</label>
+            <input type="date" name="newTaskDeadline" ng-model="newTaskDeadline">
+            <button ng-click="addTask(newTaskName, newTaskDescription, newTaskDeadline)">Lägg till!</button>
+        </div>
+        <div id="menu-options">
+            <select>
+                <option value="">Titel</option>
+                <option value="">Deadline</option>
+            </select>
+            <label for="search">Sök:</label>
+            <input type="text" name="search" id="">
+        </div>
+    </div>
+    <div id="task-container">
+        <div class="task" ng-repeat="task in tasks">
+            <h2>{{ task.title }}</h2>
+            <span>{{ "Deadline: " + task.deadline }}</span>
+            <p>{{ task.description }}</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

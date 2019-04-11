@@ -1,0 +1,8 @@
+        <form>
+            <label for="title">Att göra:</label>
+            <input type="text" name="title" id="">
+            <label for="deadline">Deadline:</label>
+            <input type="date" name="deadline" id="">
+            <label for="description">Beskrivning:</label>
+            <input type="text" name="description" id="">
+        </form>
